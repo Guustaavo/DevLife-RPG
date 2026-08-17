@@ -6,9 +6,10 @@ export function trabalhar() {
 
     if (trabalhar === 0 && jogador.energia > jogador.gastoEnergia) {
         console.log("Você trabalhou e ganhou: R$" + jogador.salario)
-
+        jogador.dias++;
+        jogador.dinheiro += jogador.salario
     }
     else{
-        console.log()
+        console.log("sem energia o suficiente!")
     }
 }
