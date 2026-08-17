@@ -8,5 +8,5 @@ export let jogador = {
     salario: 0,
     cargo: "Desempregado",
     setup: "Notebook Windows 8",
-    gastoEnergia: undefined
+    gastoEnergia: undefined,
 }
