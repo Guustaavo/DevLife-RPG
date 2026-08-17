@@ -4,8 +4,11 @@ import { jogador } from "./player.js";
 export function trabalhar() {
     let trabalhar = keyInSelect(["sim", "nao"]);
 
-    if (trabalhar === 0 && jogador.energia > 0) {
+    if (trabalhar === 0 && jogador.energia > jogador.gastoEnergia) {
         console.log("Você trabalhou e ganhou: R$" + jogador.salario)
 
+    }
+    else{
+        console.log()
     }
 }
