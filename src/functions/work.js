@@ -8,6 +8,7 @@ export function trabalhar() {
         console.log("Você trabalhou e ganhou: R$" + jogador.salario)
         jogador.dias++;
         jogador.dinheiro += jogador.salario
+        jogador.energia -= jogador.gastoEnergia
     }
     else{
         console.log("sem energia o suficiente!")
