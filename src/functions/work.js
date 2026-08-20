@@ -4,14 +4,15 @@ import { jogador } from "./player.js";
 export function trabalhar() {
     let trabalhar = leia.keyInSelect(["Sim", "Nao"], "Você deseja trabalhar?");
 
-    if (trabalhar === 0 && jogador.energia > jogador.gastoEnergia) {
+    if (trabalhar === 0 && jogador.energia >= jogador.gastoEnergia) {
         console.log("Você trabalhou e ganhou: R$" + jogador.salario);
         jogador.dias++;
         jogador.dinheiro += jogador.salario;
         jogador.energia -= jogador.gastoEnergia;
     }
     else if (trabalhar === 0 && jogador.energia < jogador.gastoEnergia) {
-        console.log("sem energia o suficiente!");
+        console.log("Sem energia o suficiente!");
+        console.log("Descanse para poder trabalhar novamente.");
     }
     else {
         console.log("Você não trabalhou!");
