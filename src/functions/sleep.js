@@ -2,7 +2,7 @@ import leia from 'readline-sync';
 import { jogador } from './player.js';
 
 export function descansar() {
-    let descansar = keyInSelect(["Sim", "Nao"]);
+    let descansar = leia.keyInSelect(["Sim", "Nao"]);
 
     if(descansar === 0){
         jogador.acoesPerDia = 3;
