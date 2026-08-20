@@ -1,4 +1,4 @@
-import leia, { keyInSelect } from 'readline-sync';
+import leia from 'readline-sync';
 import { jogador } from './player';
 
 export function descansar() {
