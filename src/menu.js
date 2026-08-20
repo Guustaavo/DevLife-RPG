@@ -1,5 +1,5 @@
 import leia from 'readline-sync';
-import { jogador, status } from './functions/player';
+import { jogador, status } from './functions/player.js';
 
 let estaNoJogo = true;
 let nome = leia.question("Digite o nome do jogador: ");

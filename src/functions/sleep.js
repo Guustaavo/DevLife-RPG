@@ -1,5 +1,5 @@
 import leia from 'readline-sync';
-import { jogador } from './player';
+import { jogador } from './player.js';
 
 export function descansar() {
     let descansar = keyInSelect(["Sim", "Nao"]);
