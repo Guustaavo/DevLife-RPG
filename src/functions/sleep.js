@@ -1,12 +1,12 @@
 import leia from 'readline-sync';
-import { jogador } from './player.js';
+import { jogador } from '../containers/player.js';
 
 export function descansar() {
-    let descansar = leia.keyInSelect(["Sim", "Nao"], "Você deseja descansar?");
+    let descansar = leia.keyInSelect(["\nSim", "Nao"], "Você deseja descansar?");
 
     if (descansar === 0) {
+        console.log("Você descansou.");
         jogador.dias++;
-        console.log("Você descansou.")
         if (jogador.energia >= 71) {
             jogador.energia = 100;
         }

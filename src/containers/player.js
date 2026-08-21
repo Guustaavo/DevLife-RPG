@@ -1,4 +1,5 @@
 import leia from 'readline-sync';
+import { itens } from './shop.js';
 
 export let jogador = {
     nome: undefined,
@@ -8,12 +9,19 @@ export let jogador = {
     salario: 100,
     dinheiro: 0,
     cargo: "Freelancer",
-    setup: "Notebook Windows 8",
-    gastoEnergia: 20,
+    setup: {
+        nivel: 1,
+        pc: "Positivo da Positivo rodando Windows XP",
+        teclado: "Teclado da Xuxa",
+        mouse: "Mouse da Barbie",
+        fone: "Fone My Little Pony",
+        cadeira: "Cadeira de plástico amarela da Skol",
+    },
+    gastoEnergia: 35,
 }
 
 export function status() {
-    console.log("xp: " + jogador.salario);
+    console.log("\nxp: " + jogador.salario);
     console.log("dias: " + jogador.dias);
     console.log("salario: " + jogador.salario);
     console.log("cargo: " + jogador.cargo);
