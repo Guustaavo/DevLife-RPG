@@ -1,6 +1,7 @@
 import leia from 'readline-sync';
 import { itens } from './shop.js';
 
+
 export let jogador = {
     nome: undefined,
     dias: 0,

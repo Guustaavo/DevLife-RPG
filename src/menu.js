@@ -1,8 +1,10 @@
+import fs from "fs"
 import leia from 'readline-sync';
 import { jogador, status } from './containers/player.js';
 import { trabalhar } from './functions/work.js';
 import { descansar } from './functions/sleep.js';
 import { loja } from './functions/buy.js';
+import { cargos } from './containers/nivelXP.js';
 
 let estaNoJogo = true;
 let nome = leia.question("Digite o nome do jogador: ");
@@ -37,8 +39,13 @@ while (estaNoJogo === true) {
       loja();
       let retornar = leia.keyInSelect(["\nRetornar"], "Clique para retornar ao menu inicial.");
    }
-   else if (acao === 4) {
+   else if(acao === 4) {
+      cargos();
+      let retornar = leia.keyInSelect(["\nRetornar"], "Clique para retornar ao menu inicial.");
+   }
+   else if (acao === 5) {
       console.log("Jogo encerrado.")
       estaNoJogo = false;
    }
+   
 }
