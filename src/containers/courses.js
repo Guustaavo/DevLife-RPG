@@ -1,6 +1,6 @@
 import leia from 'readline-sync';
 
-export const lojaCursos = [
+export let lojaCursos = [
     {
         nivel: 1,
         nome: "Introdução à Lógica de Programação",
@@ -18,7 +18,7 @@ export const lojaCursos = [
     {
         nivel: 3,
         nome: "Tecnólogo em Análise e Dev. de Sistemas",
-        preco: 4200.00, // Valor total do curso
+        preco: 4200.00,
         bonusConhecimento: 25,
         tempoConclusaoMs: 60
     },
