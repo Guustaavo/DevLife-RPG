@@ -1,0 +1,19 @@
+{
+  "nome": "Nycollas",
+  "dias": 0,
+  "energia": 100,
+  "xp": 0,
+  "salario": 100,
+  "dinheiro": 0,
+  "cargo": "Freelancer",
+  "setup": {
+    "nivel": 1,
+    "pc": "Positivo da Positivo rodando Windows XP",
+    "teclado": "Teclado da Xuxa",
+    "mouse": "Mouse da Barbie",
+    "fone": "Fone My Little Pony",
+    "cadeira": "Cadeira de plástico amarela da Skol"
+  },
+  "gastoEnergia": 35,
+  "formacao": "Sem Formação"
+}

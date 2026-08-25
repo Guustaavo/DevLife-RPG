@@ -1,9 +1,10 @@
 
-import fs from "fs";
+import leia from "readline-sync";
+import { jogador } from "../containers/player.js";
+import { salvarJogador } from "../containers/salvarJogador.js";
 
-export function salvarJogador(jogador) {
-    fs.writeFileSync(
-        "./data/jogadores.json",
-        JSON.stringify(jogador, null, 2)
-    );
+export function cadastro() {
+    jogador.nome = leia.question("Digite o nome do jogador: ");
+
+    salvarJogador(jogador);
 }
