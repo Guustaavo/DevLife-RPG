@@ -1,9 +1,12 @@
 import leia from 'readline-sync';
 import { itens } from './shop.js';
+import { salvarJogador } from "./salvarJogador.js";
+
+salvarJogador(jogador);
 
 
 export let jogador = {
-    nome: undefined,
+    nome: "",
     dias: 0,
     energia: 100,
     xp: 0,
@@ -19,6 +22,7 @@ export let jogador = {
         cadeira: "Cadeira de plástico amarela da Skol",
     },
     gastoEnergia: 35,
+    formacao: "Sem Formação"
 }
 
 export function status() {
