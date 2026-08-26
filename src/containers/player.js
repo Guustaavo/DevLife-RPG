@@ -1,9 +1,5 @@
 import leia from 'readline-sync';
-import { itens } from './shop.js';
-import { salvarJogador } from "./salvarJogador.js";
-
-salvarJogador(jogador);
-
+import { lojaComputadores } from './shop.js';
 
 export let jogador = {
     nome: "",
