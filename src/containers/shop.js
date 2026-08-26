@@ -2,6 +2,18 @@ import leia from 'readline-sync';
 
 export let lojaComputadores = [
     {
+        nivel: 1,
+        nome: "Positivo da Positivo rodando Windows XP",
+        preco: 0,
+        multiplicadorXP: 1,
+        itens: {
+            teclado: "Teclado da Xuxa",
+            mouse: "Mouse da Barbie",
+            fone: "Fone My Little Pony",
+            cadeira: "Cadeira de plástico amarela da Skol",
+        }
+    },
+    {
         nivel: 2,
         nome: "Kit Mendigo Gamer",
         preco: 250,
