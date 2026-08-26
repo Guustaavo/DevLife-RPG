@@ -39,6 +39,7 @@ while (estaNoJogo === true) {
    }
    else if(acao === 4) {
       cargos();
+      let retornar = leia.keyInSelect(["Retornar"], "Deseja retornar ao menu principal?")
    }
    else if (acao === 5) {
       console.log("Jogo encerrado.")

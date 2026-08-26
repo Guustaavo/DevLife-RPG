@@ -36,7 +36,7 @@ const Niveis = [
 
 export function cargos() {
     console.log("===== Cargos =====")
-    let cargos = leia.keyInSelect([Niveis], "escolha tal acao: ")
+    let cargos = leia.keyInSelect(["Estagiario", "Junior", "Pleno", "Senior", "TechLead"], "Escolha o cargo: ")
 
     if (cargos === 0) {
         if (jogador.xp >= 300) {
