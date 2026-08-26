@@ -43,6 +43,8 @@ export function cargos() {
             jogador.salario = Niveis.Estagiario.salario
             jogador.gastoEnergia = Niveis.Estagiario.gastoEnergia
             jogador.cargo = Niveis.Estagiario.cargo
+            console.log("agora você é um Estagiário de TI!!")
+            console.log("novo Salário!!")
         }
         else if (jogador.xp < 300){
             console.log("xp insuficiente")
@@ -54,6 +56,8 @@ export function cargos() {
             jogador.salario = Niveis.Junior.salario
             jogador.gastoEnergia = Niveis.Junior.gastoEnergia
             jogador.cargo = Niveis.Junior.cargo
+            console.log("agora você é um Dev Junior!!")
+            console.log("novo Salário!!")
         }
         else if (jogador.xp < 750){
             console.log("xp insuficiente")
@@ -65,6 +69,8 @@ export function cargos() {
             jogador.salario = Niveis.Pleno.salario
             jogador.gastoEnergia = Niveis.Pleno.gastoEnergia
             jogador.cargo = Niveis.Pleno.cargo
+            console.log("agora você é um Dev Pleno!!")
+            console.log("novo Salário!!")
         }
         else if (jogador.xp < 1200){
             console.log("xp insuficiente")
@@ -76,6 +82,8 @@ export function cargos() {
             jogador.salario = Niveis.Senior.salario
             jogador.gastoEnergia = Niveis.Senior.gastoEnergia
             jogador.cargo = Niveis.Senior.cargo
+            console.log("agora você é um Dev Senior!!")
+            console.log("novo Salário!!")
         }
         else if (jogador.xp < 2000){
             console.log("xp insuficiente")
@@ -87,6 +95,9 @@ export function cargos() {
             jogador.salario = Niveis.TechLead.salario
             jogador.gastoEnergia = Niveis.TechLead.gastoEnergia
             jogador.cargo = Niveis.TechLead.cargo
+            console.log("agora você é um TechLead!!")
+            console.log("parabens, agora você esta no maximo da carreira!")
+            console.log("novo Salário!!")
         }
         else if (jogador.xp < 300){
             console.log("xp insuficiente")
