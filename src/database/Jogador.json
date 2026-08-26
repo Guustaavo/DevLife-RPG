@@ -1,5 +1,5 @@
 {
-  "nome": "FABYANA",
+  "nome": "Nycollas",
   "dias": 0,
   "energia": 100,
   "xp": 0,
@@ -14,9 +14,10 @@
     "fone": "Fone My Little Pony",
     "cadeira": "Cadeira de plástico amarela da Skol"
   },
-  "gastoEnergia": 35,
+  "gastoEnergia": 15,
   "formacao": "Sem Formação",
+  "ganhoXp": 15,
   "id": 1,
-  "dataCriacao": "2026-08-26T15:43:44.404Z",
-  "dataAtualizacao": "2026-08-26T15:43:44.406Z"
+  "dataCriacao": "2026-08-26T16:07:00.386Z",
+  "dataAtualizacao": "2026-08-26T16:07:00.389Z"
 }
