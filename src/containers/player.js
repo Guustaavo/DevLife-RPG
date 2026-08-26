@@ -17,21 +17,19 @@ export let jogador = {
         fone: "Fone My Little Pony",
         cadeira: "Cadeira de plástico amarela da Skol",
     },
-    gastoEnergia: 35,
-    formacao: "Sem Formação"
+    gastoEnergia: 15,
+    formacao: "Sem Formação",
+    ganhoXp: 15
 }
 
 export function status() {
-    console.log("\nxp: " + jogador.salario);
+    console.log("\nxp: " + jogador.xp);
     console.log("dias: " + jogador.dias);
     console.log("salario: " + jogador.salario);
     console.log("cargo: " + jogador.cargo);
     console.log("setup: " + jogador.setup);
     console.log("gasto de energia: " + jogador.gastoEnergia);
 
-    let retornar = leia.keyInSelect(["Sim", "Nao"], "Deseja retornar ao menu principal?")
+    let retornar = leia.keyInSelect(["Voltar"],"clique 0 para voltar para o menu")
 
-    if (retornar === 1) {
-        status();
-    }
 }
