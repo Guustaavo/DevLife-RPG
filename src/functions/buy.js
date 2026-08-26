@@ -1,6 +1,7 @@
 import leia from 'readline-sync';
 import { jogador } from '../containers/player.js';
-import { computadores, itens, lojaComputadores } from '../containers/shop.js';
+import { lojaComputadores } from '../containers/shop.js';
+import { lojaCursos } from '../containers/courses.js';
 
 export function loja() {
     let verLoja = leia.keyInSelect(["\nComputadores", "Cursos"], "Selecione o que voce quer ver: ");
