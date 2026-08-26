@@ -39,67 +39,67 @@ export function cargos() {
     let cargos = leia.keyInSelect(["Estagiario", "Junior", "Pleno", "Senior", "TechLead"], "Escolha o cargo: ")
 
     if (cargos === 0) {
-        if (jogador.xp >= 300) {
-            jogador.salario = Niveis.Estagiario.salario
-            jogador.gastoEnergia = Niveis.Estagiario.gastoEnergia
-            jogador.cargo = Niveis.Estagiario.cargo
+        if (jogador.xp >= Niveis[0].xpNecessario) {
+            jogador.salario = Niveis[0].salario
+            jogador.gastoEnergia = Niveis[0].gastoEnergia
+            jogador.cargo = Niveis[0].xpNecessario.cargo
             console.log("agora você é um Estagiário de TI!!")
             console.log("novo Salário!!")
         }
-        else if (jogador.xp < 300){
+        else if (jogador.xp < Niveis[0].xpNecessario){
             console.log("xp insuficiente")
         }
     }
 
     if (cargos === 1) {
-        if (jogador.xp >= 750) {
-            jogador.salario = Niveis.Junior.salario
-            jogador.gastoEnergia = Niveis.Junior.gastoEnergia
-            jogador.cargo = Niveis.Junior.cargo
-            console.log("agora você é um Dev Junior!!")
+        if (jogador.xp >= Niveis[1].xpNecessario) {
+            jogador.salario = Niveis[1].salario
+            jogador.gastoEnergia = Niveis[1].gastoEnergia
+            jogador.cargo = Niveis[1].xpNecessario.cargo
+            console.log("agora você é Dev Junior!!")
             console.log("novo Salário!!")
         }
-        else if (jogador.xp < 750){
+        else if (jogador.xp < Niveis[1].xpNecessario){
             console.log("xp insuficiente")
         }
     }
 
     if (cargos === 2) {
-        if (jogador.xp >= 1200) {
-            jogador.salario = Niveis.Pleno.salario
-            jogador.gastoEnergia = Niveis.Pleno.gastoEnergia
-            jogador.cargo = Niveis.Pleno.cargo
+        if (jogador.xp >= Niveis[2].xpNecessario) {
+            jogador.salario = Niveis[2].salario
+            jogador.gastoEnergia = Niveis[2].gastoEnergia
+            jogador.cargo = Niveis[2].xpNecessario.cargo
             console.log("agora você é um Dev Pleno!!")
             console.log("novo Salário!!")
         }
-        else if (jogador.xp < 1200){
+        else if (jogador.xp < Niveis[2].xpNecessario){
             console.log("xp insuficiente")
         }
     }
 
     if (cargos === 3) {
-        if (jogador.xp >= 2000) {
-            jogador.salario = Niveis.Senior.salario
-            jogador.gastoEnergia = Niveis.Senior.gastoEnergia
-            jogador.cargo = Niveis.Senior.cargo
+        if (jogador.xp >= Niveis[3].xpNecessario) {
+            jogador.salario = Niveis[3].salario
+            jogador.gastoEnergia = Niveis[3].gastoEnergia
+            jogador.cargo = Niveis[3].xpNecessario.cargo
             console.log("agora você é um Dev Senior!!")
             console.log("novo Salário!!")
         }
-        else if (jogador.xp < 2000){
+        else if (jogador.xp < Niveis[3].xpNecessario){
             console.log("xp insuficiente")
         }
     }
 
     if (cargos === 4) {
-        if (jogador.xp >= 2800) {
-            jogador.salario = Niveis.TechLead.salario
-            jogador.gastoEnergia = Niveis.TechLead.gastoEnergia
-            jogador.cargo = Niveis.TechLead.cargo
+        if (jogador.xp >= Niveis[4].xpNecessario) {
+            jogador.salario = Niveis[4].salario
+            jogador.gastoEnergia = Niveis[4].gastoEnergia
+            jogador.cargo = Niveis[4].xpNecessario.cargo
             console.log("agora você é um TechLead!!")
             console.log("parabens, agora você esta no maximo da carreira!")
             console.log("novo Salário!!")
         }
-        else if (jogador.xp < 300){
+        else if (jogador.xp < Niveis[4].xpNecessario){
             console.log("xp insuficiente")
         }
     }

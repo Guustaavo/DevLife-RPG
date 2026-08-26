@@ -1,0 +1,22 @@
+{
+  "nome": "Gustavo",
+  "dias": 0,
+  "energia": 100,
+  "xp": 0,
+  "salario": 100,
+  "dinheiro": 0,
+  "cargo": "Freelancer",
+  "setup": {
+    "nivel": 1,
+    "pc": "Positivo da Positivo rodando Windows XP",
+    "teclado": "Teclado da Xuxa",
+    "mouse": "Mouse da Barbie",
+    "fone": "Fone My Little Pony",
+    "cadeira": "Cadeira de plástico amarela da Skol"
+  },
+  "gastoEnergia": 35,
+  "formacao": "Sem Formação",
+  "id": 1,
+  "dataCriacao": "2026-08-26T00:23:57.176Z",
+  "dataAtualizacao": "2026-08-26T00:23:57.177Z"
+}
