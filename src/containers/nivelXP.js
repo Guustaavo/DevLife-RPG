@@ -6,35 +6,35 @@ const Niveis = [
         cargo: "Estagiario",
         ganhoXp: 30,
         gastoEnergia: 20,
-        salario: 1800,
+        salario: 60,
         xpNecessario: 300
     },
     {
         cargo: "Junior",
         gastoEnergia: 25,
         ganhoXp: 40,
-        salario: 2400,
+        salario: 80,
         xpNecessario: 750
     },
     {
         cargo: "Pleno",
         gastoEnergia: 30,
         ganhoXp: 55,
-        salario: 5000,
+        salario: 170,
         xpNecessario: 1200
     },
     {
         cargo: "Senior",
         gastoEnergia: 35,
         ganhoXp: 70,
-        salario: 10000,
+        salario: 300,
         xpNecessario: 2000
     },
     {
         cargo: "TechLead",
         gastoEnergia: 50,
         ganhoXp: 100,
-        salario: 18000,
+        salario: 600,
         xpNecessario: 2800
     }
 ]

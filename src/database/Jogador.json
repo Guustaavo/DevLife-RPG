@@ -1,0 +1,23 @@
+{
+  "nome": "1",
+  "dias": 0,
+  "energia": 100,
+  "xp": 0,
+  "salario": 30,
+  "dinheiro": 0,
+  "cargo": "Freelancer",
+  "setup": {
+    "nivel": 1,
+    "pc": "Positivo da Positivo rodando Windows XP",
+    "teclado": "Teclado da Xuxa",
+    "mouse": "Mouse da Barbie",
+    "fone": "Fone My Little Pony",
+    "cadeira": "Cadeira de plástico amarela da Skol"
+  },
+  "gastoEnergia": 15,
+  "formacao": "Sem Formação",
+  "ganhoXp": 15,
+  "id": 1,
+  "dataCriacao": "2026-08-26T21:49:08.410Z",
+  "dataAtualizacao": "2026-08-26T21:49:08.410Z"
+}
