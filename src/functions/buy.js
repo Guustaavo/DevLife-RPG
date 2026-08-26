@@ -16,6 +16,11 @@ export function loja() {
         lojaComputadores.forEach((item, index) => {
             console.log(`\n${index + 1}. ${item.nome} - R$${item.preco}`);
         });
+        let retornar = leia.keyInSelect(["Sim", "Nao"], "Deseja retornar ao menu principal?")
+
+        if (retornar === 1) {
+            loja();
+        }
     }
     else if (verLoja === 1) {
         console.log("\n=======================");
@@ -27,6 +32,11 @@ export function loja() {
         lojaCursos.forEach((item, index) => {
             console.log(`\n${index + 1}. ${item.nome} - R$${item.preco}`);
         });
+        let retornar = leia.keyInSelect(["Sim", "Nao"], "Deseja retornar ao menu principal?")
+
+        if (retornar === 1) {
+            loja();
+        }
     }
     else {
         console.log("Voce nao viu a loja.")

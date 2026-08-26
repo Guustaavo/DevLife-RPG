@@ -28,4 +28,10 @@ export function status() {
     console.log("cargo: " + jogador.cargo);
     console.log("setup: " + jogador.setup);
     console.log("gasto de energia: " + jogador.gastoEnergia);
+
+    let retornar = leia.keyInSelect(["Sim", "Nao"], "Deseja retornar ao menu principal?")
+
+    if (retornar === 1) {
+        status();
+    }
 }
