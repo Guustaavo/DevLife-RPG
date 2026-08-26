@@ -1,5 +1,7 @@
 import leia from "readline-sync";
 import { jogador } from "../containers/player.js";
+import { cargos } from "../containers/nivelXP.js";
+
 
 export function trabalhar() {
     let trabalhar = leia.keyInSelect(["\nSim", "Nao"], "Você deseja trabalhar?");
@@ -9,6 +11,7 @@ export function trabalhar() {
         jogador.dias++;
         jogador.dinheiro += jogador.salario;
         jogador.energia -= jogador.gastoEnergia;
+        jogador.xp += jogador.ganhoXp
     }
     else if (trabalhar === 0 && jogador.energia < jogador.gastoEnergia) {
         console.log("Sem energia o suficiente!");
