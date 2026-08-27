@@ -1,4 +1,5 @@
 import leia from 'readline-sync';
+import { jogador } from './player';
 
 export let lojaCursos = [
     {
@@ -37,3 +38,16 @@ export let lojaCursos = [
         tempoConclusaoMs: 365
     }
 ];
+
+export function adquirirCurso() {
+    let cursos = leia.keyInSelect(["Introdução à Lógica de Programação", "Bootcamp Desenvolvedor Web Front-End", "Tecnólogo em Análise e Dev. de Sistemas", "Especialização em Arquitetura de Software e Cloud", "Mestrado em Ciência da Computação e IA"], "Escolha o curso: ")
+
+    if (cursos === 0) {
+        if (jogador.dinheiro >= lojaCursos[0].preco) {
+        }
+    }
+    if (cursos === 1) {
+        if (jogador.dinheiro >= lojaCursos[1].preco) {
+    }
+}
+}

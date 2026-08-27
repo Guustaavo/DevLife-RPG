@@ -12,7 +12,7 @@ export let jogador = {
     cargo: "Freelancer",
     setup: lojaComputadores[0].itens,
     gastoEnergia: 15,
-    formacao: "Sem Formação",
+    formacao: [ ],
     ganhoXp: 15
 }
 
