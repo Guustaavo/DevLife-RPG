@@ -38,7 +38,7 @@ export let lojaCursos = [
     {
         nivel: 5,
         nome: "Mestrado em Ciência da Computação e IA",
-        preco: 30000.00,
+        preco: 45000.00,
         bonusConhecimento: 7,
         tempoConclusao: 20,
         cursoCompleto: false
@@ -48,60 +48,41 @@ export let lojaCursos = [
 export function adquirirCurso() {
     let cursos = leia.keyInSelect(["Introdução à Lógica de Programação", "Bootcamp Desenvolvedor Web Front-End", "Tecnólogo em Análise e Dev. de Sistemas", "Especialização em Arquitetura de Software e Cloud", "Mestrado em Ciência da Computação e IA"], "Escolha o curso: ")
 
-    if (cursos === 0) {
-        if (jogador.dinheiro >= lojaCursos[0].preco && jogador.formacao < lojaCursos[0].nivel && jogador.cursoEmAndamento === 0) {
-            jogador.dinheiro -= lojaCursos[0].preco;
-            jogador.cursoEmAndamento = lojaCursos[0].nivel;
-            jogador.diasCurso = lojaCursos[0].tempoConclusao;
-            console.log("📚 Curso iniciado!");
-            console.log("⏳ Duração: " + lojaCursos[0].tempoConclusao + " dias");
-            salvarJogador(jogador);
-        }
+    if (cursos === -1) {
+        return;
     }
 
-    if (cursos === 1) {
-        if (jogador.dinheiro >= lojaCursos[1].preco && jogador.formacao < lojaCursos[1].nivel && jogador.cursoEmAndamento === 0) {
-            jogador.dinheiro -= lojaCursos[1].preco;
-            jogador.cursoEmAndamento = lojaCursos[1].nivel;
-            jogador.diasCurso = lojaCursos[1].tempoConclusao;
-            console.log("📚 Curso iniciado!");
-            console.log("⏳ Duração: " + lojaCursos[1].tempoConclusao + " dias");
-            salvarJogador(jogador);
-        }
+    let curso = lojaCursos[cursos];
+
+    if (curso.nivel > jogador.formacao + 1) {
+        console.log("❌ Você precisa concluir o curso anterior primeiro.");
+        return;
     }
 
-    if (cursos === 2) {
-        if (jogador.dinheiro >= lojaCursos[2].preco && jogador.formacao < lojaCursos[2].nivel && jogador.cursoEmAndamento === 0) {
-            jogador.dinheiro -= lojaCursos[2].preco;
-            jogador.cursoEmAndamento = lojaCursos[2].nivel;
-            jogador.diasCurso = lojaCursos[2].tempoConclusao;
-            console.log("📚 Curso iniciado!");
-            console.log("⏳ Duração: " + lojaCursos[2].tempoConclusao + " dias");
-            salvarJogador(jogador);
-        }
+    if (curso.nivel <= jogador.formacao) {
+        console.log("❌ Você já concluiu esse curso.");
+        return;
     }
 
-    if (cursos === 3) {
-        if (jogador.dinheiro >= lojaCursos[3].preco && jogador.formacao < lojaCursos[3].nivel && jogador.cursoEmAndamento === 0) {
-            jogador.dinheiro -= lojaCursos[3].preco;
-            jogador.cursoEmAndamento = lojaCursos[3].nivel;
-            jogador.diasCurso = lojaCursos[3].tempoConclusao;
-            console.log("📚 Curso iniciado!");
-            console.log("⏳ Duração: " + lojaCursos[3].tempoConclusao + " dias");
-            salvarJogador(jogador);
-        }
+    if (jogador.cursoEmAndamento > 0) {
+        console.log("❌ Você já está fazendo um curso.");
+        return;
     }
 
-    if (cursos === 4) {
-        if (jogador.dinheiro >= lojaCursos[4].preco && jogador.formacao < lojaCursos[4].nivel && jogador.cursoEmAndamento === 0) {
-            jogador.dinheiro -= lojaCursos[4].preco;
-            jogador.cursoEmAndamento = lojaCursos[4].nivel;
-            jogador.diasCurso = lojaCursos[4].tempoConclusao;
-            console.log("📚 Curso iniciado!");
-            console.log("⏳ Duração: " + lojaCursos[4].tempoConclusao + " dias");
-            salvarJogador(jogador);
-        }
+    if (jogador.dinheiro < curso.preco) {
+        console.log("❌ Saldo insuficiente!");
+        return;
     }
+
+    jogador.dinheiro -= curso.preco;
+    jogador.cursoEmAndamento = curso.nivel;
+    jogador.diasCurso = curso.tempoConclusao;
+
+    console.log("📚 Curso iniciado!");
+    console.log("📖 " + curso.nome);
+    console.log("⏳ Duração: " + curso.tempoConclusao + " dias");
+
+    salvarJogador(jogador);
 }
 
 export function atualizarCurso() {

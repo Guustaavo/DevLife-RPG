@@ -7,7 +7,7 @@ export let jogador = {
     energia: 100,
     energiaMaxima: 100,
     xp: 0,
-    salario: 30,
+    salario: 100,
     dinheiro: 0,
     cargo: "Freelancer",
     setup: lojaComputadores[0].itens,

@@ -4,6 +4,7 @@ import { jogador } from '../containers/player.js';
 import { lojaComputadores } from '../containers/shop.js';
 import { lojaCursos } from '../containers/courses.js';
 import { menuSeta } from './menuSeta.js';
+import { salvarJogador } from '../containers/salvarJogador.js';
 
 async function comprarComputador(item) {
     if (jogador.dinheiro >= item.preco) {
@@ -11,17 +12,38 @@ async function comprarComputador(item) {
         jogador.setup = item.itens;
 
         console.log(chalk.green(`\n✅ Voce comprou "${item.nome}"! Saldo restante: R$${jogador.dinheiro}`));
+        salvarJogador(jogador);
     } else {
         console.log(chalk.red(`\n❌ Saldo insuficiente! Voce tem R$${jogador.dinheiro}, precisa de R$${item.preco}.`));
     }
 }
 
 async function comprarCurso(item) {
+    if (jogador.cursoEmAndamento > 0) {
+        console.log(chalk.red("\n❌ Você já está fazendo um curso!"));
+        return;
+    }
+
+    if (item.nivel > jogador.formacao + 1) {
+        console.log(chalk.red("\n❌ Você precisa concluir o curso anterior primeiro!"));
+        return;
+    }
+
+    if (item.nivel <= jogador.formacao) {
+        console.log(chalk.red("\n❌ Você já concluiu esse curso!"));
+        return;
+    }
+
     if (jogador.dinheiro >= item.preco) {
         jogador.dinheiro -= item.preco;
-        jogador.formacao = item.nome;
+        jogador.cursoEmAndamento = item.nivel;
+        jogador.diasCurso = item.tempoConclusao;
 
-        console.log(chalk.green(`\n✅ Voce comprou o curso "${item.nome}"! Saldo restante: R$${jogador.dinheiro}`));
+        console.log(chalk.green(`\n📚 Curso iniciado: "${item.nome}"!`));
+        console.log(chalk.yellow(`⏳ Duração: ${item.tempoConclusao} dias`));
+        console.log(chalk.green(`💰 Saldo restante: R$${jogador.dinheiro}`));
+
+        salvarJogador(jogador);
     } else {
         console.log(chalk.red(`\n❌ Saldo insuficiente! Voce tem R$${jogador.dinheiro}, precisa de R$${item.preco}.`));
     }

@@ -7,7 +7,7 @@ export const Niveis = [
         cargo: "Estagiario",
         ganhoXp: 30,
         gastoEnergia: 20,
-        salario: 60,
+        salario: 200,
         xpNecessario: 300,
         energia: 150,
         formacaoNecessaria: 1
@@ -16,7 +16,7 @@ export const Niveis = [
         cargo: "Junior",
         gastoEnergia: 25,
         ganhoXp: 40,
-        salario: 80,
+        salario: 300,
         xpNecessario: 750,
         energia: 200,
         formacaoNecessaria: 2
@@ -25,7 +25,7 @@ export const Niveis = [
         cargo: "Pleno",
         gastoEnergia: 30,
         ganhoXp: 55,
-        salario: 170,
+        salario: 400,
         xpNecessario: 1200,
         energia: 250,
         formacaoNecessaria: 3
@@ -34,7 +34,7 @@ export const Niveis = [
         cargo: "Senior",
         gastoEnergia: 35,
         ganhoXp: 70,
-        salario: 300,
+        salario: 500,
         xpNecessario: 2000,
         energia: 300,
         formacaoNecessaria: 4

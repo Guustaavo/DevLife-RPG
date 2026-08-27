@@ -26,7 +26,7 @@ export async function login() {
     }
 
     const opcoes = jogadores.map(
-        jogador => `👤 ${jogador.nome} | 🆔 ID: ${jogador.id} | 📅 ${jogador.dias || 0} dias | 💰 R$${jogador.salario || 0} | 💼 ${jogador.cargo}`
+        jogador => `👤 ${jogador.nome} | 🆔 ID: ${jogador.id} | 📅 ${jogador.dias || 0} dias | 💰 R$${jogador.dinheiro || 0} | 💼 ${jogador.cargo}`
     );
 
     opcoes.push("↩️ Voltar");
