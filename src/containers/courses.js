@@ -49,7 +49,7 @@ export function adquirirCurso() {
     let cursos = leia.keyInSelect(["Introdução à Lógica de Programação", "Bootcamp Desenvolvedor Web Front-End", "Tecnólogo em Análise e Dev. de Sistemas", "Especialização em Arquitetura de Software e Cloud", "Mestrado em Ciência da Computação e IA"], "Escolha o curso: ")
 
     if (cursos === 0) {
-        if (jogador.dinheiro >= lojaCursos[0].preco && jogador.formacao < lojaCursos[0].nivel) {
+        if (jogador.dinheiro >= lojaCursos[0].preco && jogador.formacao < lojaCursos[0].nivel && jogador.cursoEmAndamento === 0) {
             jogador.dinheiro -= lojaCursos[0].preco;
             jogador.cursoEmAndamento = lojaCursos[0].nivel;
             jogador.diasCurso = lojaCursos[0].tempoConclusao;
@@ -60,7 +60,7 @@ export function adquirirCurso() {
     }
 
     if (cursos === 1) {
-        if (jogador.dinheiro >= lojaCursos[1].preco && jogador.formacao < lojaCursos[1].nivel) {
+        if (jogador.dinheiro >= lojaCursos[1].preco && jogador.formacao < lojaCursos[1].nivel && jogador.cursoEmAndamento === 0) {
             jogador.dinheiro -= lojaCursos[1].preco;
             jogador.cursoEmAndamento = lojaCursos[1].nivel;
             jogador.diasCurso = lojaCursos[1].tempoConclusao;
@@ -71,7 +71,7 @@ export function adquirirCurso() {
     }
 
     if (cursos === 2) {
-        if (jogador.dinheiro >= lojaCursos[2].preco && jogador.formacao < lojaCursos[2].nivel) {
+        if (jogador.dinheiro >= lojaCursos[2].preco && jogador.formacao < lojaCursos[2].nivel && jogador.cursoEmAndamento === 0) {
             jogador.dinheiro -= lojaCursos[2].preco;
             jogador.cursoEmAndamento = lojaCursos[2].nivel;
             jogador.diasCurso = lojaCursos[2].tempoConclusao;
@@ -82,7 +82,7 @@ export function adquirirCurso() {
     }
 
     if (cursos === 3) {
-        if (jogador.dinheiro >= lojaCursos[3].preco && jogador.formacao < lojaCursos[3].nivel) {
+        if (jogador.dinheiro >= lojaCursos[3].preco && jogador.formacao < lojaCursos[3].nivel && jogador.cursoEmAndamento === 0) {
             jogador.dinheiro -= lojaCursos[3].preco;
             jogador.cursoEmAndamento = lojaCursos[3].nivel;
             jogador.diasCurso = lojaCursos[3].tempoConclusao;
@@ -93,7 +93,7 @@ export function adquirirCurso() {
     }
 
     if (cursos === 4) {
-        if (jogador.dinheiro >= lojaCursos[4].preco && jogador.formacao < lojaCursos[4].nivel) {
+        if (jogador.dinheiro >= lojaCursos[4].preco && jogador.formacao < lojaCursos[4].nivel && jogador.cursoEmAndamento === 0) {
             jogador.dinheiro -= lojaCursos[4].preco;
             jogador.cursoEmAndamento = lojaCursos[4].nivel;
             jogador.diasCurso = lojaCursos[4].tempoConclusao;
@@ -110,7 +110,7 @@ export function atualizarCurso() {
 
         jogador.diasCurso--;
 
-        console.log("📚 Curso: " + jogador.cursoEmAndamento);
+        console.log("📚 Curso: " + lojaCursos[jogador.cursoEmAndamento - 1].nome);
         console.log("⏳ Dias restantes: " + jogador.diasCurso);
 
         if (jogador.diasCurso <= 0) {

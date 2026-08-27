@@ -26,7 +26,7 @@ export async function login() {
     }
 
     const opcoes = jogadores.map(
-        jogador => `👤 ${jogador.nome} | ID: ${jogador.id} | 📅 ${jogador.dias} dias | 💼 ${jogador.cargo}`
+        jogador => `👤 ${jogador.nome} | 🆔 ID: ${jogador.id} | 📅 ${jogador.dias || 0} dias | 💰 R$${jogador.salario || 0} | 💼 ${jogador.cargo}`
     );
 
     opcoes.push("↩️ Voltar");
@@ -53,6 +53,7 @@ export async function login() {
     console.log("\n👤 Jogador: " + jogador.nome);
     console.log("🆔 ID da carreira: " + jogador.id);
     console.log("📅 Dias: " + jogador.dias);
+    console.log("💰 Salário: R$" + jogador.salario);
     console.log("💼 Cargo: " + jogador.cargo);
 
     return true;
