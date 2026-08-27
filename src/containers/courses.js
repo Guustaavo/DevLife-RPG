@@ -7,35 +7,35 @@ export let lojaCursos = [
         nome: "Introdução à Lógica de Programação",
         preco: 500.00,
         bonusConhecimento: 1.5,
-        tempoConclusao: 7
+        tempoConclusao: 3
     },
     {
         nivel: 2,
         nome: "Bootcamp Desenvolvedor Web Front-End",
         preco: 1500.00,
         bonusConhecimento: 2,
-        tempoConclusao: 15
+        tempoConclusao: 5
     },
     {
         nivel: 3,
         nome: "Tecnólogo em Análise e Dev. de Sistemas",
         preco: 7500.00,
         bonusConhecimento: 3,
-        tempoConclusao: 60
+        tempoConclusao: 10
     },
     {
         nivel: 4,
         nome: "Especialização em Arquitetura de Software e Cloud",
         preco: 15000.00,
         bonusConhecimento: 5,
-        tempoConclusao: 180
+        tempoConclusao: 15
     },
     {
         nivel: 5,
         nome: "Mestrado em Ciência da Computação e IA",
-        preco: 45000.00,
+        preco: 30000.00,
         bonusConhecimento: 7,
-        tempoConclusao: 365
+        tempoConclusao: 20
     }
 ];
 
