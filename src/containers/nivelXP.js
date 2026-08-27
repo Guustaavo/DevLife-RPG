@@ -1,5 +1,6 @@
-import leia from "readline-sync"
+import leia from "readline-sync";
 import { jogador } from "./player.js";
+import { menuSeta } from "../functions/menuSeta.js";
 import { salvarJogador } from "./salvarJogador.js";
 
 export const Niveis = [
@@ -45,93 +46,123 @@ export const Niveis = [
     }
 ]
 
-export function cargos() {
-    console.log("===== Cargos =====")
-    let cargos = leia.keyInSelect(["Estagiario", "Junior", "Pleno", "Senior", "TechLead"], "Escolha o cargo: ")
+export async function cargos() {
 
-    if (cargos === 0) {
+    let escolha = await menuSeta(
+        "📈 Escolha o cargo que deseja alcançar:",
+        [
+            "🎓 Estagiario - 300 XP",
+            "💻 Junior - 750 XP",
+            "🧑‍💻 Pleno - 1200 XP",
+            "🔥 Senior - 2000 XP",
+            "👑 TechLead - 2800 XP"
+        ]
+    );
+
+    if (escolha === -1) {
+        return;
+    }
+
+    if (escolha === 0) {
+
         if (jogador.xp >= Niveis[0].xpNecessario) {
-            jogador.salario = Niveis[0].salario
-            jogador.gastoEnergia = Niveis[0].gastoEnergia
-            jogador.cargo = Niveis[0].cargo
-            jogador.ganhoXp = Niveis[0].ganhoXp
-            jogador.energia = Niveis[0].energia
-            jogador.energiaMaxima = Niveis[0].energia
+            jogador.salario = Niveis[0].salario;
+            jogador.gastoEnergia = Niveis[0].gastoEnergia;
+            jogador.cargo = Niveis[0].cargo;
+            jogador.ganhoXp = Niveis[0].ganhoXp;
+            jogador.energia = Niveis[0].energia;
+            jogador.energiaMaxima = Niveis[0].energia;
+
+            console.log("🎓 Agora você é um Estagiário de TI!!");
+            console.log("💰 Novo salário!!");
+
             salvarJogador(jogador);
-            console.log("agora você é um Estagiário de TI!!")
-            console.log("novo Salário!!")
         }
-        else if (jogador.xp < Niveis[0].xpNecessario){
-            console.log("xp insuficiente")
+        else {
+            console.log("❌ XP insuficiente");
         }
     }
-    
-    if (cargos === 1) {
+
+    if (escolha === 1) {
+
         if (jogador.xp >= Niveis[1].xpNecessario) {
-            jogador.salario = Niveis[1].salario
-            jogador.gastoEnergia = Niveis[1].gastoEnergia
-            jogador.cargo = Niveis[1].cargo
-            jogador.ganhoXp = Niveis[1].ganhoXp
-            jogador.energia = Niveis[1].energia
-            jogador.energiaMaxima = Niveis[1].energia
+            jogador.salario = Niveis[1].salario;
+            jogador.gastoEnergia = Niveis[1].gastoEnergia;
+            jogador.cargo = Niveis[1].cargo;
+            jogador.ganhoXp = Niveis[1].ganhoXp;
+            jogador.energia = Niveis[1].energia;
+            jogador.energiaMaxima = Niveis[1].energia;
+
+            console.log("💻 Agora você é Dev Junior!!");
+            console.log("💰 Novo salário!!");
+
             salvarJogador(jogador);
-            console.log("agora você é Dev Junior!!")
-            console.log("novo Salário!!")
         }
-        else if (jogador.xp < Niveis[1].xpNecessario){
-            console.log("xp insuficiente")
+        else {
+            console.log("❌ XP insuficiente");
         }
     }
-    
-    if (cargos === 2) {
+
+    if (escolha === 2) {
+
         if (jogador.xp >= Niveis[2].xpNecessario) {
-            jogador.salario = Niveis[2].salario
-            jogador.gastoEnergia = Niveis[2].gastoEnergia
-            jogador.cargo = Niveis[2].cargo
-            jogador.ganhoXp = Niveis[2].ganhoXp
-            jogador.energia = Niveis[2].energia
-            jogador.energiaMaxima = Niveis[2].energia
+            jogador.salario = Niveis[2].salario;
+            jogador.gastoEnergia = Niveis[2].gastoEnergia;
+            jogador.cargo = Niveis[2].cargo;
+            jogador.ganhoXp = Niveis[2].ganhoXp;
+            jogador.energia = Niveis[2].energia;
+            jogador.energiaMaxima = Niveis[2].energia;
+
+            console.log("🧑‍💻 Agora você é um Dev Pleno!!");
+            console.log("💰 Novo salário!!");
+
             salvarJogador(jogador);
-            console.log("agora você é um Dev Pleno!!")
-            console.log("novo Salário!!")
         }
-        else if (jogador.xp < Niveis[2].xpNecessario){
-            console.log("xp insuficiente")
+        else {
+            console.log("❌ XP insuficiente");
         }
     }
-    
-    if (cargos === 3) {
+
+    if (escolha === 3) {
+
         if (jogador.xp >= Niveis[3].xpNecessario) {
-            jogador.salario = Niveis[3].salario
-            jogador.gastoEnergia = Niveis[3].gastoEnergia
-            jogador.cargo = Niveis[3].cargo
-            jogador.ganhoXp = Niveis[3].ganhoXp
-            jogador.energia = Niveis[3].energia
-            jogador.energiaMaxima = Niveis[3].energia
+            jogador.salario = Niveis[3].salario;
+            jogador.gastoEnergia = Niveis[3].gastoEnergia;
+            jogador.cargo = Niveis[3].cargo;
+            jogador.ganhoXp = Niveis[3].ganhoXp;
+            jogador.energia = Niveis[3].energia;
+            jogador.energiaMaxima = Niveis[3].energia;
+
+            console.log("🔥 Agora você é um Dev Senior!!");
+            console.log("💰 Novo salário!!");
+
             salvarJogador(jogador);
-            console.log("agora você é um Dev Senior!!")
-            console.log("novo Salário!!")
         }
-        else if (jogador.xp < Niveis[3].xpNecessario){
-            console.log("xp insuficiente")
+        else {
+            console.log("❌ XP insuficiente");
         }
     }
-    
-    if (cargos === 4) {
+
+    if (escolha === 4) {
+
         if (jogador.xp >= Niveis[4].xpNecessario) {
-            jogador.salario = Niveis[4].salario
-            jogador.gastoEnergia = Niveis[4].gastoEnergia
-            jogador.cargo = Niveis[4].cargo
-            jogador.ganhoXp = Niveis[4].ganhoXp
-            jogador.energia = Niveis[4].energia
-            jogador.energiaMaxima = Niveis[4].energia
+            jogador.salario = Niveis[4].salario;
+            jogador.gastoEnergia = Niveis[4].gastoEnergia;
+            jogador.cargo = Niveis[4].cargo;
+            jogador.ganhoXp = Niveis[4].ganhoXp;
+            jogador.energia = Niveis[4].energia;
+            jogador.energiaMaxima = Niveis[4].energia;
+
+            console.log("👑 Agora você é um TechLead!!");
+            console.log("🎉 Parabens, agora você esta no maximo da carreira!");
+            console.log("💰 Novo salário!!");
+
             salvarJogador(jogador);
-            console.log("agora você é um TechLead!!")
-            console.log("parabens, agora você esta no maximo da carreira!")
-            console.log("novo Salário!!")
         }
-        else if (jogador.xp < Niveis[4].xpNecessario){
-            console.log("xp insuficiente")
+        else {
+            console.log("❌ XP insuficiente");
         }
     }
+
+    leia.keyInSelect(["↩️ Voltar"], "Pressione para voltar.");
 }
