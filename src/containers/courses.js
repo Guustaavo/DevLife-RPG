@@ -38,7 +38,7 @@ export let lojaCursos = [
     {
         nivel: 5,
         nome: "Mestrado em Ciência da Computação e IA",
-        preco: 45000.00,
+        preco: 30000.00,
         bonusConhecimento: 7,
         tempoConclusao: 20,
         cursoCompleto: false
