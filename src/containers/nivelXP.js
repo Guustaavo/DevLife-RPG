@@ -1,7 +1,7 @@
 import leia from "readline-sync"
 import { jogador } from "./player.js";
 
-const Niveis = [
+export const Niveis = [
     {
         cargo: "Estagiario",
         ganhoXp: 30,
@@ -55,6 +55,7 @@ export function cargos() {
             jogador.cargo = Niveis[0].xpNecessario.cargo
             jogador.ganhoXp = Niveis[0].ganhoXp
             jogador.energia = Niveis[0].energia
+            jogador.energiaMaxima = Niveis[0].energia
             console.log("agora você é um Estagiário de TI!!")
             console.log("novo Salário!!")
         }
@@ -62,7 +63,7 @@ export function cargos() {
             console.log("xp insuficiente")
         }
     }
-
+    
     if (cargos === 1) {
         if (jogador.xp >= Niveis[1].xpNecessario) {
             jogador.salario = Niveis[1].salario
@@ -70,6 +71,7 @@ export function cargos() {
             jogador.cargo = Niveis[1].xpNecessario.cargo
             jogador.ganhoXp = Niveis[1].ganhoXp
             jogador.energia = Niveis[1].energia
+            jogador.energiaMaxima = Niveis[1].energia
             console.log("agora você é Dev Junior!!")
             console.log("novo Salário!!")
         }
@@ -77,7 +79,7 @@ export function cargos() {
             console.log("xp insuficiente")
         }
     }
-
+    
     if (cargos === 2) {
         if (jogador.xp >= Niveis[2].xpNecessario) {
             jogador.salario = Niveis[2].salario
@@ -85,6 +87,7 @@ export function cargos() {
             jogador.cargo = Niveis[2].xpNecessario.cargo
             jogador.ganhoXp = Niveis[2].ganhoXp
             jogador.energia = Niveis[2].energia
+            jogador.energiaMaxima = Niveis[2].energia
             console.log("agora você é um Dev Pleno!!")
             console.log("novo Salário!!")
         }
@@ -92,7 +95,7 @@ export function cargos() {
             console.log("xp insuficiente")
         }
     }
-
+    
     if (cargos === 3) {
         if (jogador.xp >= Niveis[3].xpNecessario) {
             jogador.salario = Niveis[3].salario
@@ -100,6 +103,7 @@ export function cargos() {
             jogador.cargo = Niveis[3].xpNecessario.cargo
             jogador.ganhoXp = Niveis[3].ganhoXp
             jogador.energia = Niveis[3].energia
+            jogador.energiaMaxima = Niveis[3].energia
             console.log("agora você é um Dev Senior!!")
             console.log("novo Salário!!")
         }
@@ -107,7 +111,7 @@ export function cargos() {
             console.log("xp insuficiente")
         }
     }
-
+    
     if (cargos === 4) {
         if (jogador.xp >= Niveis[4].xpNecessario) {
             jogador.salario = Niveis[4].salario
@@ -115,6 +119,7 @@ export function cargos() {
             jogador.cargo = Niveis[4].xpNecessario.cargo
             jogador.ganhoXp = Niveis[4].ganhoXp
             jogador.energia = Niveis[4].energia
+            jogador.energiaMaxima = Niveis[4].energia
             console.log("agora você é um TechLead!!")
             console.log("parabens, agora você esta no maximo da carreira!")
             console.log("novo Salário!!")

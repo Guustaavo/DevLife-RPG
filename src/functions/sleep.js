@@ -1,6 +1,6 @@
 import leia from 'readline-sync';
 import { jogador } from '../containers/player.js';
-import { cargos } from '../containers/nivelXP.js';
+import { cargos, Niveis } from '../containers/nivelXP.js';
 
 
 export function descansar() {
@@ -9,10 +9,10 @@ export function descansar() {
     if (descansar === 0) {
         console.log("Você descansou.");
         jogador.dias++;
-        if (jogador.energia >= 71) {
-            jogador.energia = 100;
+        if (jogador.energia >= (jogador.energiaMaxima - jogador.gastoEnergia)) {
+            jogador.energia = jogador.energiaMaxima;
         }
-        else if (jogador.energia <= 70) {
+        else if (jogador.energia <= jogador.energiaMaxima) {
             jogador.energia += 30;
         }
     } else {

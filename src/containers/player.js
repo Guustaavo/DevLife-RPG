@@ -5,8 +5,9 @@ export let jogador = {
     nome: "",
     dias: 0,
     energia: 100,
+    energiaMaxima: 100,
     xp: 0,
-    salario: 3000,
+    salario: 30,
     dinheiro: 0,
     cargo: "Freelancer",
     setup: lojaComputadores[0].itens,
@@ -23,6 +24,6 @@ export function status() {
     console.log("setup: " + jogador.setup.pc);
     console.log("gasto de energia: " + jogador.gastoEnergia);
 
-    let retornar = leia.keyInSelect(["Voltar"],"clique 1 para voltar para o menu")
+    let retornar = leia.keyInSelect(["Voltar"],"clique 1 para voltar para o menu");
 
 }
