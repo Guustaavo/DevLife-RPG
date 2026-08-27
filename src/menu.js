@@ -76,11 +76,11 @@ while (estaNoJogo === true) {
     }
 
     else if (acao === 3) {
-        loja();
+        await loja();
     }
 
     else if (acao === 4) {
-        cargos();
+        await cargos();
         let retornar = leia.keyInSelect(["Retornar"], "Deseja retornar ao menu principal?");
     }
 
