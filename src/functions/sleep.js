@@ -1,5 +1,7 @@
 import leia from 'readline-sync';
 import { jogador } from '../containers/player.js';
+import { cargos } from '../containers/nivelXP.js';
+
 
 export function descansar() {
     let descansar = leia.keyInSelect(["\nSim", "Nao"], "Você deseja descansar?");

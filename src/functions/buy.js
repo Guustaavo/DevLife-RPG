@@ -6,8 +6,7 @@ import { lojaCursos } from '../containers/courses.js';
 function comprarComputador(item) {
     if (jogador.dinheiro >= item.preco) {
         jogador.dinheiro -= item.preco;
-        jogador.setup.pc = item.nome;
-        jogador.setup.nivel += 1; // opcional: sobe o nível do setup a cada compra
+        jogador.setup = item.itens;
 
         console.log(`\n✅ Voce comprou "${item.nome}"! Saldo restante: R$${jogador.dinheiro}`);
     } else {

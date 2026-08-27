@@ -7,35 +7,40 @@ const Niveis = [
         ganhoXp: 30,
         gastoEnergia: 20,
         salario: 60,
-        xpNecessario: 300
+        xpNecessario: 300,
+        energia: 150
     },
     {
         cargo: "Junior",
         gastoEnergia: 25,
         ganhoXp: 40,
         salario: 80,
-        xpNecessario: 750
+        xpNecessario: 750,
+        energia: 200
     },
     {
         cargo: "Pleno",
         gastoEnergia: 30,
         ganhoXp: 55,
         salario: 170,
-        xpNecessario: 1200
+        xpNecessario: 1200,
+        energia: 250
     },
     {
         cargo: "Senior",
         gastoEnergia: 35,
         ganhoXp: 70,
         salario: 300,
-        xpNecessario: 2000
+        xpNecessario: 2000,
+        energia: 300
     },
     {
         cargo: "TechLead",
         gastoEnergia: 50,
         ganhoXp: 100,
         salario: 600,
-        xpNecessario: 2800
+        xpNecessario: 2800,
+        energia: 350
     }
 ]
 
@@ -49,6 +54,7 @@ export function cargos() {
             jogador.gastoEnergia = Niveis[0].gastoEnergia
             jogador.cargo = Niveis[0].xpNecessario.cargo
             jogador.ganhoXp = Niveis[0].ganhoXp
+            jogador.energia = Niveis[0].energia
             console.log("agora você é um Estagiário de TI!!")
             console.log("novo Salário!!")
         }
@@ -63,6 +69,7 @@ export function cargos() {
             jogador.gastoEnergia = Niveis[1].gastoEnergia
             jogador.cargo = Niveis[1].xpNecessario.cargo
             jogador.ganhoXp = Niveis[1].ganhoXp
+            jogador.energia = Niveis[1].energia
             console.log("agora você é Dev Junior!!")
             console.log("novo Salário!!")
         }
@@ -77,6 +84,7 @@ export function cargos() {
             jogador.gastoEnergia = Niveis[2].gastoEnergia
             jogador.cargo = Niveis[2].xpNecessario.cargo
             jogador.ganhoXp = Niveis[2].ganhoXp
+            jogador.energia = Niveis[2].energia
             console.log("agora você é um Dev Pleno!!")
             console.log("novo Salário!!")
         }
@@ -91,6 +99,7 @@ export function cargos() {
             jogador.gastoEnergia = Niveis[3].gastoEnergia
             jogador.cargo = Niveis[3].xpNecessario.cargo
             jogador.ganhoXp = Niveis[3].ganhoXp
+            jogador.energia = Niveis[3].energia
             console.log("agora você é um Dev Senior!!")
             console.log("novo Salário!!")
         }
@@ -105,6 +114,7 @@ export function cargos() {
             jogador.gastoEnergia = Niveis[4].gastoEnergia
             jogador.cargo = Niveis[4].xpNecessario.cargo
             jogador.ganhoXp = Niveis[4].ganhoXp
+            jogador.energia = Niveis[4].energia
             console.log("agora você é um TechLead!!")
             console.log("parabens, agora você esta no maximo da carreira!")
             console.log("novo Salário!!")
