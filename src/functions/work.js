@@ -11,7 +11,7 @@ export function trabalhar() {
         jogador.dias++;
         jogador.dinheiro += jogador.salario;
         jogador.energia -= jogador.gastoEnergia;
-        jogador.xp += jogador.ganhoXp
+        jogador.xp += (jogador.ganhoXp * jogador.bonusConhecimento)
     }
     else if (trabalhar === 0 && jogador.energia < jogador.gastoEnergia) {
         console.log("Sem energia o suficiente!");

@@ -4,7 +4,7 @@ import { jogador } from "./player.js";
 export const Niveis = [
     {
         cargo: "Estagiario",
-        ganhoXp: 30,
+        ganhoXp: (30 * jogador.bonusConhecimento),
         gastoEnergia: 20,
         salario: 60,
         xpNecessario: 300,
@@ -13,7 +13,7 @@ export const Niveis = [
     {
         cargo: "Junior",
         gastoEnergia: 25,
-        ganhoXp: 40,
+        ganhoXp: (40 * jogador.bonusConhecimento),
         salario: 80,
         xpNecessario: 750,
         energia: 200
@@ -21,7 +21,7 @@ export const Niveis = [
     {
         cargo: "Pleno",
         gastoEnergia: 30,
-        ganhoXp: 55,
+        ganhoXp: (55 * jogador.bonusConhecimento),
         salario: 170,
         xpNecessario: 1200,
         energia: 250
@@ -29,7 +29,7 @@ export const Niveis = [
     {
         cargo: "Senior",
         gastoEnergia: 35,
-        ganhoXp: 70,
+        ganhoXp: (70 * jogador.bonusConhecimento),
         salario: 300,
         xpNecessario: 2000,
         energia: 300
@@ -37,7 +37,7 @@ export const Niveis = [
     {
         cargo: "TechLead",
         gastoEnergia: 50,
-        ganhoXp: 100,
+        ganhoXp: (100 * jogador.bonusConhecimento),
         salario: 600,
         xpNecessario: 2800,
         energia: 350
