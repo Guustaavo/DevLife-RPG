@@ -1,5 +1,6 @@
 import leia from "readline-sync"
 import { jogador } from "./player.js";
+import { salvarJogador } from "./salvarJogador.js";
 
 export const Niveis = [
     {
@@ -52,10 +53,11 @@ export function cargos() {
         if (jogador.xp >= Niveis[0].xpNecessario) {
             jogador.salario = Niveis[0].salario
             jogador.gastoEnergia = Niveis[0].gastoEnergia
-            jogador.cargo = Niveis[0].xpNecessario.cargo
+            jogador.cargo = Niveis[0].cargo
             jogador.ganhoXp = Niveis[0].ganhoXp
             jogador.energia = Niveis[0].energia
             jogador.energiaMaxima = Niveis[0].energia
+            salvarJogador(jogador);
             console.log("agora você é um Estagiário de TI!!")
             console.log("novo Salário!!")
         }
@@ -68,10 +70,11 @@ export function cargos() {
         if (jogador.xp >= Niveis[1].xpNecessario) {
             jogador.salario = Niveis[1].salario
             jogador.gastoEnergia = Niveis[1].gastoEnergia
-            jogador.cargo = Niveis[1].xpNecessario.cargo
+            jogador.cargo = Niveis[1].cargo
             jogador.ganhoXp = Niveis[1].ganhoXp
             jogador.energia = Niveis[1].energia
             jogador.energiaMaxima = Niveis[1].energia
+            salvarJogador(jogador);
             console.log("agora você é Dev Junior!!")
             console.log("novo Salário!!")
         }
@@ -84,10 +87,11 @@ export function cargos() {
         if (jogador.xp >= Niveis[2].xpNecessario) {
             jogador.salario = Niveis[2].salario
             jogador.gastoEnergia = Niveis[2].gastoEnergia
-            jogador.cargo = Niveis[2].xpNecessario.cargo
+            jogador.cargo = Niveis[2].cargo
             jogador.ganhoXp = Niveis[2].ganhoXp
             jogador.energia = Niveis[2].energia
             jogador.energiaMaxima = Niveis[2].energia
+            salvarJogador(jogador);
             console.log("agora você é um Dev Pleno!!")
             console.log("novo Salário!!")
         }
@@ -100,10 +104,11 @@ export function cargos() {
         if (jogador.xp >= Niveis[3].xpNecessario) {
             jogador.salario = Niveis[3].salario
             jogador.gastoEnergia = Niveis[3].gastoEnergia
-            jogador.cargo = Niveis[3].xpNecessario.cargo
+            jogador.cargo = Niveis[3].cargo
             jogador.ganhoXp = Niveis[3].ganhoXp
             jogador.energia = Niveis[3].energia
             jogador.energiaMaxima = Niveis[3].energia
+            salvarJogador(jogador);
             console.log("agora você é um Dev Senior!!")
             console.log("novo Salário!!")
         }
@@ -116,10 +121,11 @@ export function cargos() {
         if (jogador.xp >= Niveis[4].xpNecessario) {
             jogador.salario = Niveis[4].salario
             jogador.gastoEnergia = Niveis[4].gastoEnergia
-            jogador.cargo = Niveis[4].xpNecessario.cargo
+            jogador.cargo = Niveis[4].cargo
             jogador.ganhoXp = Niveis[4].ganhoXp
             jogador.energia = Niveis[4].energia
             jogador.energiaMaxima = Niveis[4].energia
+            salvarJogador(jogador);
             console.log("agora você é um TechLead!!")
             console.log("parabens, agora você esta no maximo da carreira!")
             console.log("novo Salário!!")
