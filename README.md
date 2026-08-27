@@ -6,13 +6,15 @@ O personagem possui os seguintes atributos:
 
 Nome
 
-Idade
+Dias
 
 XP
 
 Energia
 
 Cargo
+
+Setup
 
 Durante o jogo, o jogador poderá realizar diferentes atividades para ganhar XP, recuperar energia e evoluir profissionalmente.
 
