@@ -1,10 +1,10 @@
 import leia from 'readline-sync';
 import { jogador } from '../containers/player.js';
-import { cargos } from '../containers/nivelXP.js';
+import { salvarJogador } from '../containers/salvarJogador.js';
 import { atualizarCurso } from "../containers/courses.js";
 
 
-export function trabalhar() {
+export async function trabalhar() {
     let trabalhar = leia.keyInSelect(["\nSim", "Nao"], "Você deseja trabalhar?");
 
     if (trabalhar === 0 && jogador.energia >= jogador.gastoEnergia) {
@@ -13,7 +13,8 @@ export function trabalhar() {
         atualizarCurso();
         jogador.dinheiro += jogador.salario;
         jogador.energia -= jogador.gastoEnergia;
-        jogador.xp += (jogador.ganhoXp * jogador.bonusConhecimento)
+        jogador.xp += (jogador.ganhoXp * jogador.bonusConhecimento);
+        salvarJogador(jogador);
     }
     else if (trabalhar === 0 && jogador.energia < jogador.gastoEnergia) {
         console.log("Sem energia o suficiente!");
