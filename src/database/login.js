@@ -1,60 +1,60 @@
 import fs from "fs";
-import leia from "readline-sync";
-
-import { carregarJogador } from "../containers/player.js";
+import { jogador } from "../containers/player.js";
+import { menuSeta } from "../functions/menuSeta.js";
 
 const caminho = "./src/database/jogadores.json";
 
-export function login() {
-
-    console.log("\n==============================");
-    console.log("           LOGIN");
-    console.log("==============================");
+export async function login() {
 
     if (!fs.existsSync(caminho)) {
-        console.log("\n❌ Nenhuma carreira encontrada.");
+        console.log("❌ Nenhuma carreira encontrada.");
         return false;
     }
 
     const dados = fs.readFileSync(caminho, "utf-8");
 
     if (dados.trim() === "") {
-        console.log("\n❌ Nenhuma carreira encontrada.");
+        console.log("❌ Nenhuma carreira encontrada.");
         return false;
     }
 
     const jogadores = JSON.parse(dados);
 
     if (jogadores.length === 0) {
-        console.log("\n❌ Nenhuma carreira cadastrada.");
+        console.log("❌ Nenhuma carreira encontrada.");
         return false;
     }
 
-    const id = leia.questionInt(
-        "\nDigite o ID da sua carreira: "
+    const opcoes = jogadores.map(
+        jogador => `👤 ${jogador.nome} | 🆔 ID: ${jogador.id} | 📅 ${jogador.dias || 0} dias | 💰 R$${jogador.dinheiro || 0} | 💼 ${jogador.cargo}`
     );
 
-    const jogadorEncontrado = jogadores.find(
-        jogador => jogador.id === id
+    opcoes.push("↩️ Voltar");
+
+    const escolha = await menuSeta(
+        "💾 SUAS CARREIRAS",
+        opcoes
     );
 
-    if (!jogadorEncontrado) {
-        console.log("\n❌ ID não encontrado!");
+    if (escolha === -1 || escolha === jogadores.length) {
         return false;
     }
 
-    carregarJogador(jogadorEncontrado);
+    const jogadorEncontrado = jogadores[escolha];
 
-    console.log("\n✅ Login realizado com sucesso!");
-    console.log("Bem-vindo de volta, " + jogadorEncontrado.nome + "!");
-    console.log("Dias: " + jogadorEncontrado.dias);
-    console.log("XP: " + jogadorEncontrado.xp);
-    console.log("Dinheiro: R$" + jogadorEncontrado.dinheiro);
+    Object.assign(jogador, jogadorEncontrado);
 
-    leia.keyInSelect(
-        ["Continuar"],
-        "\nClique 1 para continuar sua carreira."
-    );
+    console.clear();
+
+    console.log("================================");
+    console.log("       ✅ LOGIN REALIZADO!");
+    console.log("================================");
+
+    console.log("\n👤 Jogador: " + jogador.nome);
+    console.log("🆔 ID da carreira: " + jogador.id);
+    console.log("📅 Dias: " + jogador.dias);
+    console.log("💰 Salário: R$" + jogador.salario);
+    console.log("💼 Cargo: " + jogador.cargo);
 
     return true;
 }

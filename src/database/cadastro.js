@@ -1,11 +1,11 @@
 import leia from "readline-sync";
 
-import { jogador, resetarJogador } from "../containers/player.js";
+import { jogador } from "../containers/player.js";
 import { salvarJogador } from "../containers/salvarJogador.js";
 
 export function cadastro() {
 
-    resetarJogador();
+    
 
     console.log("\n==============================");
     console.log("       NOVA CARREIRA");
