@@ -33,12 +33,12 @@ export function login() {
     }
 
     const opcoes = jogadores.map((jogadorSalvo) => (
-        `👤 ${jogadorSalvo.nome} | 🆔 ID: ${jogadorSalvo.id} | 📅 ${jogadorSalvo.dias || 0} dias | 💰 R$${jogadorSalvo.dinheiro || 0} | 💼 ${jogadorSalvo.cargo || "Freelancer"}`
+        `${jogadorSalvo.nome} | ID: ${jogadorSalvo.id} | ${jogadorSalvo.dias || 0} dias | R$${jogadorSalvo.dinheiro || 0} | ${jogadorSalvo.cargo || "Freelancer"}`
     ));
 
-    opcoes.push("↩️ Voltar");
+    opcoes.push("Voltar");
 
-    const escolha = leia.keyInSelect(opcoes, "💾 SUAS CARREIRAS");
+    const escolha = leia.keyInSelect(opcoes, "SUAS CARREIRAS");
 
     if (escolha === -1 || escolha === jogadores.length) {
         return false;
