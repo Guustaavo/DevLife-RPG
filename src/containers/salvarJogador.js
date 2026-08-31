@@ -2,72 +2,51 @@ import fs from "fs";
 
 const caminho = "./src/database/jogadores.json";
 
-export function salvarJogador(jogador) {
-
-    let jogadores = [];
-
-    if (fs.existsSync(caminho)) {
-
-        const dados = fs.readFileSync(caminho, "utf-8");
-
-        if (dados.trim() !== "") {
-
-            jogadores = JSON.parse(dados);
-
-        }
-
+function lerJogadores() {
+    if (!fs.existsSync(caminho)) {
+        return [];
     }
 
-    if (!jogador.id) {
+    const dados = fs.readFileSync(caminho, "utf-8").trim();
 
-        if (jogadores.length === 0) {
+    if (!dados) {
+        return [];
+    }
 
-            jogador.id = 1;
+    try {
+        const jogadores = JSON.parse(dados);
+        return Array.isArray(jogadores) ? jogadores : [];
+    } catch {
+        return [];
+    }
+}
 
-        } else {
+export function salvarJogador(jogadorAtual) {
+    const jogadores = lerJogadores();
+    const dataAtual = new Date().toLocaleString("pt-BR", {
+        timeZone: "America/Sao_Paulo"
+    });
 
-            const maiorId = Math.max(
-                ...jogadores.map(jogador => jogador.id)
-            );
+    const jogadorSalvo = { ...jogadorAtual };
 
-            jogador.id = maiorId + 1;
+    if (!jogadorSalvo.id) {
+        const maiorId = jogadores.reduce((maior, atual) => Math.max(maior, Number(atual.id) || 0), 0);
+        jogadorSalvo.id = maiorId + 1;
+        jogadorSalvo.dataCriacao = dataAtual;
+    }
 
-        }
+    jogadorSalvo.dataAtualizacao = dataAtual;
 
-        jogador.dataCriacao = new Date().toLocaleString("pt-BR", {
-            timeZone: "America/Sao_Paulo"
-        });
+    const indice = jogadores.findIndex((j) => Number(j.id) === Number(jogadorSalvo.id));
 
-        jogador.dataAtualizacao = new Date().toLocaleString("pt-BR", {
-            timeZone: "America/Sao_Paulo"
-        });
-
-        jogadores.push(jogador);
-
+    if (indice >= 0) {
+        jogadores[indice] = jogadorSalvo;
     } else {
-
-        const indice = jogadores.findIndex(
-            j => j.id === jogador.id
-        );
-
-        jogador.dataAtualizacao = new Date().toLocaleString("pt-BR", {
-            timeZone: "America/Sao_Paulo"
-        });
-
-        if (indice !== -1) {
-
-            jogadores[indice] = jogador;
-
-        } else {
-
-            jogadores.push(jogador);
-
-        }
-
+        jogadores.push(jogadorSalvo);
     }
 
-    fs.writeFileSync(
-        caminho,
-        JSON.stringify(jogadores, null, 2)
-    );
+    fs.writeFileSync(caminho, JSON.stringify(jogadores, null, 2));
+    Object.assign(jogadorAtual, jogadorSalvo);
+
+    return jogadorSalvo;
 }

@@ -1,6 +1,6 @@
 import leia from 'readline-sync';
 
-export let lojaComputadores = [
+export let computadores = [
     {
         nivel: 1,
         nome: "Kit Mendigo Gamer",
