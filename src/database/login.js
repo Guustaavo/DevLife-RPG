@@ -1,55 +1,55 @@
 import fs from "fs";
+import leia from "readline-sync";
+
 import { jogador } from "../containers/player.js";
-import { menuSeta } from "../functions/menuSeta.js";
 
 const caminho = "./src/database/jogadores.json";
 
-export async function login() {
-
+function lerJogadores() {
     if (!fs.existsSync(caminho)) {
-        console.log("❌ Nenhuma carreira encontrada.");
-        return false;
+        return [];
     }
 
-    const dados = fs.readFileSync(caminho, "utf-8");
+    const dados = fs.readFileSync(caminho, "utf-8").trim();
 
-    if (dados.trim() === "") {
-        console.log("❌ Nenhuma carreira encontrada.");
-        return false;
+    if (!dados) {
+        return [];
     }
 
-    const jogadores = JSON.parse(dados);
+    try {
+        const jogadores = JSON.parse(dados);
+        return Array.isArray(jogadores) ? jogadores : [];
+    } catch {
+        return [];
+    }
+}
+
+export function login() {
+    const jogadores = lerJogadores();
 
     if (jogadores.length === 0) {
         console.log("❌ Nenhuma carreira encontrada.");
         return false;
     }
 
-    const opcoes = jogadores.map(
-        jogador => `👤 ${jogador.nome} | 🆔 ID: ${jogador.id} | 📅 ${jogador.dias || 0} dias | 💰 R$${jogador.dinheiro || 0} | 💼 ${jogador.cargo}`
-    );
+    const opcoes = jogadores.map((jogadorSalvo) => (
+        `👤 ${jogadorSalvo.nome} | 🆔 ID: ${jogadorSalvo.id} | 📅 ${jogadorSalvo.dias || 0} dias | 💰 R$${jogadorSalvo.dinheiro || 0} | 💼 ${jogadorSalvo.cargo || "Freelancer"}`
+    ));
 
     opcoes.push("↩️ Voltar");
 
-    const escolha = await menuSeta(
-        "💾 SUAS CARREIRAS",
-        opcoes
-    );
+    const escolha = leia.keyInSelect(opcoes, "💾 SUAS CARREIRAS");
 
     if (escolha === -1 || escolha === jogadores.length) {
         return false;
     }
 
-    const jogadorEncontrado = jogadores[escolha];
-
-    Object.assign(jogador, jogadorEncontrado);
+    Object.assign(jogador, jogadores[escolha]);
 
     console.clear();
-
     console.log("================================");
     console.log("       ✅ LOGIN REALIZADO!");
     console.log("================================");
-
     console.log("\n👤 Jogador: " + jogador.nome);
     console.log("🆔 ID da carreira: " + jogador.id);
     console.log("📅 Dias: " + jogador.dias);
