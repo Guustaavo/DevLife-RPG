@@ -1,7 +1,7 @@
 import leia from "readline-sync";
 
 import { jogador } from "../containers/player.js";
-import { salvarJogador } from "../containers/salvarJogador.js";
+import { salvarJogador } from "./salvarJogador.js";
 
 export function cadastro() {
     console.log("\n==============================");

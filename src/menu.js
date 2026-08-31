@@ -1,7 +1,7 @@
 import leia from 'readline-sync';
 
 import { jogador } from './containers/player.js';
-import { salvarJogador } from './containers/salvarJogador.js';
+import { salvarJogador } from './database/salvarJogador.js';
 import { status } from './functions/status.js';
 import { trabalhar } from './functions/trabalhar.js';
 import { descansar } from './functions/descansar.js';
