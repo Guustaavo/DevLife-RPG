@@ -1,2 +1,28 @@
 [
+  {
+    "nome": "Gustavo",
+    "dias": 0,
+    "energia": 100,
+    "energiaMaxima": 100,
+    "xp": 0,
+    "salario": 100,
+    "dinheiro": 0,
+    "cargo": "Freelancer",
+    "setup": {
+      "pc": "PC da Positivo de 2005",
+      "teclado": "Teclado de escritório apagado",
+      "mouse": "Mouse de R$ 15 com clique duplo",
+      "fone": "Headset de Telemarketing",
+      "cadeira": "Cadeira de jantar da vovó"
+    },
+    "gastoEnergia": 15,
+    "formacao": 0,
+    "cursoEmAndamento": 0,
+    "diasCurso": 0,
+    "bonusConhecimento": 1,
+    "ganhoXp": 15,
+    "id": 1,
+    "dataCriacao": "31/08/2026, 19:59:13",
+    "dataAtualizacao": "31/08/2026, 20:04:48"
+  }
 ]
